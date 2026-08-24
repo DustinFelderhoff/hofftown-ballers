@@ -1,27 +1,34 @@
 # Hofftown Ballers — Weekly Kid-Friendly Report
 
 Automated weekly fantasy football report for the Sleeper league **Hofftown Ballers**
-(12 teams, 2026 season). Every Tuesday the pipeline scrapes the league from the
+(12 teams, 2026 season) — kicking off with a **Draft Week report with Week 1
+matchup previews** (draft grades, starting-lineup scoring analysis, and the first
+real games of the season). Every Tuesday the pipeline scrapes the league from the
 Sleeper API, writes a playful report with the DeepSeek LLM, runs it through a
-safety gate (blocklist + LLM review), renders a kid-friendly HTML site, and
-deploys it to GitHub Pages.
+safety gate (blocklist + LLM review), strips AI-slop with a humanizer pass before
+publishing, renders a kid-friendly HTML site, and deploys it to GitHub Pages.
+The report includes Power Rankings, a League Stories section, and real first
+names next to each team.
 
 **Live site:** https://dustinfelderhoff.github.io/hofftown-ballers/
+
+**Draft Board:** the site also has a full 180-pick Draft Board page at `draft.html` — every pick of the draft in one table, from 1.01 to the last round.
 
 ## Pipeline
 
 ```
-scrape.py  →  writer.py  →  reviewer.py  →  build_site.py  →  GitHub Pages deploy
-(Sleeper)     (DeepSeek)     (safety gate)     (HTML render)
+scrape.py  →  writer.py  →  reviewer.py  →  humanize.py  →  build_site.py  →  GitHub Pages deploy
+(Sleeper)     (DeepSeek)     (safety gate)    (de-AI pass)     (HTML render)
 ```
 
 | Step | Script | What it does |
 |---|---|---|
 | 1 | `scrape.py` | Pulls league / users / rosters / drafts / picks / matchups from the Sleeper API into `data/` |
-| 2 | `writer.py` | Asks DeepSeek to write the report into `report.json` |
+| 2 | `writer.py` | Asks DeepSeek to write the report (5 sections, incl. Power Rankings) into `report.json` |
 | 3 | `reviewer.py` | Blocklist + LLM safety review → `report.reviewed.json` |
-| 4 | `build_site.py` | Renders `site/` (index.html + archive) |
-| 5 | GitHub Actions | Deploys `site/` to GitHub Pages |
+| 4 | `humanize.py` | Strips AI writing tells from every text field (filler, hedging, em-dash overuse…) → `report.humanized.json` |
+| 5 | `build_site.py` | Renders `site/` (index.html + draft board + archive) |
+| 6 | GitHub Actions | Deploys `site/` to GitHub Pages |
 
 ## Run locally
 
@@ -31,18 +38,19 @@ Everything is Python 3 stdlib — no dependencies to install.
 python scrape.py
 python writer.py      # needs DEEPSEEK_API_KEY in the environment
 python reviewer.py
+python humanize.py    # needs DEEPSEEK_API_KEY in the environment
 python build_site.py
 ```
 
 Or all in one shot:
 
 ```bash
-python scrape.py && python writer.py && python reviewer.py && python build_site.py
+python scrape.py && python writer.py && python reviewer.py && python humanize.py && python build_site.py
 ```
 
-The writer and reviewer steps require `DEEPSEEK_API_KEY` to be set in the
-environment (it lives in `C:/Users/dusti/AppData/Local/hermes/.env` locally and
-as a GitHub Actions secret in CI).
+The writer, reviewer, and humanizer steps require `DEEPSEEK_API_KEY` to be set
+in the environment (it lives in `C:/Users/dusti/AppData/Local/hermes/.env`
+locally and as a GitHub Actions secret in CI).
 
 ## Weekly automation
 

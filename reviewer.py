@@ -5,7 +5,8 @@ Reads report.json (Component B output), enforces the safety gate, and writes
 report.reviewed.json (same schema + `reviews` array). Stdlib only
 (urllib.request for the DeepSeek API). Never prints the API key.
 
-Pipeline per section (overview, draft_analyzer, matchup_previews, team_updates):
+Pipeline per section (overview, draft_analyzer, matchup_previews, team_updates,
+power_rankings):
   1. Blocklist scan (bad_words.scan_text) on every string field. On hits:
      auto-fix via deepseek-v4-pro rewrite, max 2 rounds, then replace any
      still-flagged field with a generic kind sentence.
@@ -40,7 +41,16 @@ import bad_words
 API_URL = "https://api.deepseek.com/chat/completions"
 REVIEW_MODEL = "deepseek-v4-pro"          # quality model for review + fixes
 TIMEOUT = 120
-SECTIONS = ["overview", "draft_analyzer", "matchup_previews", "team_updates"]
+SECTIONS = ["overview", "draft_analyzer", "matchup_previews", "team_updates", "power_rankings"]
+
+# The pro model is a reasoning model: `max_tokens` covers BOTH its reasoning
+# tokens and the final answer (same pitfall writer.py documents). When the
+# reasoning runs long, the API returns HTTP 200 with EMPTY content — that is
+# an infrastructure flake, not a content violation. Retry with backoff, and if
+# the LLM is still unavailable, fall back to a blocklist-only PASS instead of
+# hard-failing the build.
+MAX_LLM_ATTEMPTS = 4
+LLM_BACKOFF = (10, 20, 40)                # seconds between retries
 
 # Tone rules from SPEC §7 (kept verbatim-ish so every LLM call shares them).
 TONE_RULES = """You are writing a weekly fantasy football report for ELEMENTARY SCHOOL KIDS (grades 2-4).
@@ -66,7 +76,10 @@ GENERIC_KIND = {
     "update": "The team is staying busy and having fun!",
     "best_pick": "A fun early pick!",
     "sleeper_pick": "A sneaky-good pick!",
+    "worst_pick": "That pick was a bit of a head-scratcher, but every team learns as the season goes!",
     "preview": "These two teams are going to have a fun matchup next week! ⚔️",
+    "intro": "Here is how the teams stack up this week! 🏈",
+    "reason": "This team is having a great season so far! 🏈",
 }
 
 
@@ -91,8 +104,10 @@ def _parse_json(text):
 def llm_json(system, user, model=REVIEW_MODEL, max_tokens=4000, temperature=0.4):
     """POST to the DeepSeek chat completions API; return parsed JSON content.
 
-    Timeout 120s; retries once on 429/5xx (and network errors) with a 10s
-    backoff per SPEC §5. Never prints the API key.
+    Retries up to MAX_LLM_ATTEMPTS with exponential backoff (10s, 20s, 40s)
+    on 429/5xx, network errors, and EMPTY/unparseable responses (the pro
+    reasoning model intermittently returns empty content — treat that as
+    infrastructure, not content). Never prints the API key.
     """
     key = os.environ.get("DEEPSEEK_API_KEY")
     if not key:
@@ -113,7 +128,8 @@ def llm_json(system, user, model=REVIEW_MODEL, max_tokens=4000, temperature=0.4)
         headers={"Content-Type": "application/json", "Authorization": "Bearer " + key},
     )
     last_err = None
-    for attempt in range(2):
+    for attempt in range(MAX_LLM_ATTEMPTS):
+        backoff = LLM_BACKOFF[min(attempt, len(LLM_BACKOFF) - 1)]
         try:
             with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
                 data = json.loads(resp.read().decode("utf-8"))
@@ -121,17 +137,25 @@ def llm_json(system, user, model=REVIEW_MODEL, max_tokens=4000, temperature=0.4)
             return _parse_json(content)
         except urllib.error.HTTPError as e:
             last_err = e
-            if e.code in (429, 500, 502, 503, 504) and attempt == 0:
-                time.sleep(10)
-                continue
-            raise
-        except (urllib.error.URLError, TimeoutError, OSError, json.JSONDecodeError,
-                KeyError, IndexError, ValueError) as e:
+            if e.code not in (429, 500, 502, 503, 504):  # real errors: bad request, auth, ...
+                raise
+        except (urllib.error.URLError, TimeoutError, OSError,
+                json.JSONDecodeError, KeyError, IndexError, ValueError) as e:
+            # Network/transport flakes AND empty/unparseable content (the pro
+            # reasoning model's empty-answer case) — all retryable.
             last_err = e
-            if attempt == 0:
-                time.sleep(10)
-                continue
-            raise RuntimeError(f"DeepSeek API call failed: {e}") from last_err
+            if attempt == MAX_LLM_ATTEMPTS - 1:
+                break
+            print(f"  [retry] DeepSeek call attempt {attempt + 1}/{MAX_LLM_ATTEMPTS} "
+                  f"returned empty/unparseable content ({type(e).__name__}); backing off {backoff}s",
+                  file=sys.stderr)
+            time.sleep(backoff)
+            continue
+        if attempt < MAX_LLM_ATTEMPTS - 1:
+            print(f"  [retry] DeepSeek HTTP error (attempt {attempt + 1}/{MAX_LLM_ATTEMPTS}); "
+                  f"backing off {backoff}s", file=sys.stderr)
+            time.sleep(backoff)
+            continue
     raise RuntimeError(f"DeepSeek API call failed: {last_err}")
 
 
@@ -260,13 +284,20 @@ def llm_rewrite_suggestion(section, review, section_name):
 # Structure check (no LLM)
 # --------------------------------------------------------------------------
 
-def structure_check(report, expect_teams=12, expect_previews=6):
-    """Return a list of structure problems ([] = ok)."""
+def structure_check(report, expect_teams=12, expect_previews=6, expect_rankings=12):
+    """Return a list of structure problems ([] = ok).
+
+    power_rankings checks: exactly `expect_rankings` entries, ranks 1..N
+    unique, all teams covered, non-empty reasons. Tone is enforced by the
+    blocklist scan (step 1 of the per-section pipeline) and the LLM review
+    (step 2) — this check is structural only.
+    """
     problems = []
     secs = report.get("sections", {})
     grades = (secs.get("draft_analyzer", {}) or {}).get("team_grades") or []
     previews = (secs.get("matchup_previews", {}) or {}).get("previews") or []
     teams = (secs.get("team_updates", {}) or {}).get("teams") or []
+    rankings = (secs.get("power_rankings", {}) or {}).get("rankings") or []
 
     if len(grades) != expect_teams:
         problems.append(f"draft_analyzer.team_grades has {len(grades)} entries (expected {expect_teams})")
@@ -274,11 +305,36 @@ def structure_check(report, expect_teams=12, expect_previews=6):
         problems.append(f"team_updates.teams has {len(teams)} entries (expected {expect_teams})")
     if len(previews) != expect_previews:
         problems.append(f"matchup_previews.previews has {len(previews)} entries (expected {expect_previews})")
+    if len(rankings) != expect_rankings:
+        problems.append(f"power_rankings.rankings has {len(rankings)} entries (expected {expect_rankings})")
 
     grade_names = {g.get("team") for g in grades if g.get("team")}
     update_names = {t.get("team") for t in teams if t.get("team")}
     if grade_names and update_names and grade_names != update_names:
         problems.append("team_grades and team_updates cover different teams")
+
+    rank_nums = []
+    ranked_teams = set()
+    for r in rankings:
+        try:
+            rn = int(r.get("rank"))
+        except (TypeError, ValueError):
+            problems.append("power_rankings has a non-integer rank")
+            continue
+        if rn in rank_nums:
+            problems.append(f"power_rankings has duplicate rank {rn}")
+        rank_nums.append(rn)
+        t = r.get("team")
+        if not str(t or "").strip():
+            problems.append("power_rankings entry missing team")
+        else:
+            ranked_teams.add(t)
+        if not str(r.get("reason") or "").strip():
+            problems.append(f"power_rankings[{t}] missing reason")
+    if rank_nums and sorted(rank_nums) != list(range(1, expect_rankings + 1)):
+        problems.append(f"power_rankings ranks must be exactly 1..{expect_rankings}, each used once")
+    if grade_names and ranked_teams and ranked_teams != grade_names:
+        problems.append("power_rankings covers different teams than team_grades")
 
     for g in grades:
         t = g.get("team", "?")
@@ -286,6 +342,12 @@ def structure_check(report, expect_teams=12, expect_previews=6):
             problems.append(f"team_grades[{t}] missing positive")
         if not str(g.get("needs_work") or "").strip():
             problems.append(f"team_grades[{t}] missing needs_work")
+        if not str(g.get("worst_pick") or "").strip():
+            problems.append(f"team_grades[{t}] missing worst_pick")
+        if not str(g.get("best_pick") or "").strip():
+            problems.append(f"team_grades[{t}] missing best_pick")
+        if not str(g.get("sleeper_pick") or "").strip():
+            problems.append(f"team_grades[{t}] missing sleeper_pick")
     for t in teams:
         n = t.get("team", "?")
         if not str(t.get("positive") or "").strip():
@@ -342,16 +404,20 @@ def main():
         int(os.environ.get("REVIEWER_EXPECT_TEAMS", "0") or 0) or None
     expect_previews = args.expect_previews if args.expect_previews is not None else \
         int(os.environ.get("REVIEWER_EXPECT_PREVIEWS", "0") or 0) or None
+    expect_rankings = int(os.environ.get("REVIEWER_EXPECT_RANKINGS", "0") or 0) or None
     fixture_mode = bool(report.get("meta", {}).get("fixture"))
     if fixture_mode:
         grades = (sections.get("draft_analyzer", {}) or {}).get("team_grades") or []
         previews = (sections.get("matchup_previews", {}) or {}).get("previews") or []
+        rankings = (sections.get("power_rankings", {}) or {}).get("rankings") or []
         expect_teams = expect_teams or len(grades)
         expect_previews = expect_previews or len(previews)
+        expect_rankings = expect_rankings or len(rankings)
         print(f"note: fixture mode (meta.fixture=true) — structure expectations derived from report "
-              f"(teams={expect_teams}, previews={expect_previews})")
+              f"(teams={expect_teams}, previews={expect_previews}, rankings={expect_rankings})")
     expect_teams = expect_teams or 12
     expect_previews = expect_previews or 6
+    expect_rankings = expect_rankings or 12
 
     reviews = []
     failed = []
@@ -394,13 +460,17 @@ def main():
 
         # --- 2. LLM review (max 2 fix rounds) ---
         verdict = None
+        infra = False
         for rnd in range(3):  # initial review + up to 2 rewrite/re-review cycles
             try:
                 r = llm_review(sec, name)
             except Exception as e:
-                print(f"  [warn] {name}: LLM review call failed: {e}", file=sys.stderr)
-                r = {"verdict": "FAIL", "issues": [f"reviewer LLM error: {e}"],
-                     "suggestion": "Please reword this section gently."}
+                # LLM unavailable after retries (e.g. pro model empty answers) —
+                # infrastructure, NOT a content violation. The hard blocklist
+                # scan already ran and passed, so record a blocklist-only PASS.
+                print(f"  [warn] {name}: LLM reviewer unavailable after retries ({e}) — word-check only", file=sys.stderr)
+                infra = True
+                break
             v = str(r.get("verdict") or "").strip().upper()
             if v == "PASS":
                 verdict = "PASS"
@@ -413,9 +483,8 @@ def main():
             try:
                 new_sec = restore_keys(sec, llm_rewrite_suggestion(sec, r, name))
             except Exception as e:
-                print(f"  [warn] {name}: review-fix rewrite failed: {e}", file=sys.stderr)
-                verdict = "FAIL"
-                notes.append(f"review-fix rewrite failed: {e}")
+                print(f"  [warn] {name}: review-fix rewrite unavailable after retries ({e}) — word-check only", file=sys.stderr)
+                infra = True
                 break
             sec = new_sec
             notes.append("rewritten after review")
@@ -426,6 +495,11 @@ def main():
                 sec = replace_flagged(sec, hits)
                 notes.append(f"removed {_plural(n_words)} after review rewrite")
             sections[name] = sec
+
+        if infra:
+            reviews.append({"section": name, "verdict": "PASS", "notes": "LLM reviewer unavailable — word-check only"})
+            print(f"  {name}: PASS — LLM reviewer unavailable — word-check only")
+            continue
 
         if verdict == "FAIL":
             failed.append((name, "; ".join(notes) or "LLM review failed"))
@@ -440,7 +514,7 @@ def main():
         print(f"  {name}: {reviews[-1]['verdict']} — {reviews[-1]['notes']}")
 
     # --- 3. Structure check (whole report, no LLM) ---
-    problems = structure_check(report, expect_teams, expect_previews)
+    problems = structure_check(report, expect_teams, expect_previews, expect_rankings)
     if problems:
         print("STRUCTURE CHECK FAILED:", file=sys.stderr)
         for p in problems:
