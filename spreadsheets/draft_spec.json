@@ -1,0 +1,2041 @@
+{
+ "full_calc_on_load": false,
+ "sheets": [
+  {
+   "name": "All Picks",
+   "rows": [
+    [
+     {
+      "value": "Pick #",
+      "bold": true,
+      "font_color": "FFFFFF",
+      "fill": "FF6B35",
+      "align": "center"
+     },
+     {
+      "value": "Round",
+      "bold": true,
+      "font_color": "FFFFFF",
+      "fill": "FF6B35",
+      "align": "center"
+     },
+     {
+      "value": "Team (Sleeper)",
+      "bold": true,
+      "font_color": "FFFFFF",
+      "fill": "FF6B35",
+      "align": "center"
+     },
+     {
+      "value": "First Name",
+      "bold": true,
+      "font_color": "FFFFFF",
+      "fill": "FF6B35",
+      "align": "center"
+     },
+     {
+      "value": "Team Name",
+      "bold": true,
+      "font_color": "FFFFFF",
+      "fill": "FF6B35",
+      "align": "center"
+     },
+     {
+      "value": "Player",
+      "bold": true,
+      "font_color": "FFFFFF",
+      "fill": "FF6B35",
+      "align": "center"
+     },
+     {
+      "value": "Pos",
+      "bold": true,
+      "font_color": "FFFFFF",
+      "fill": "FF6B35",
+      "align": "center"
+     },
+     {
+      "value": "NFL Team",
+      "bold": true,
+      "font_color": "FFFFFF",
+      "fill": "FF6B35",
+      "align": "center"
+     }
+    ],
+    [
+     1,
+     1,
+     "TheBrodinators",
+     "Brody",
+     "",
+     "Brandon Aubrey",
+     "K",
+     "DAL"
+    ],
+    [
+     2,
+     1,
+     "MadFutbol",
+     "",
+     "",
+     "Josh Allen",
+     "QB",
+     "BUF"
+    ],
+    [
+     3,
+     1,
+     "iplayfutbolfr",
+     "",
+     "",
+     "Jahmyr Gibbs",
+     "RB",
+     "DET"
+    ],
+    [
+     4,
+     1,
+     "mwf8507",
+     "",
+     "Hoff Daddy",
+     "Bijan Robinson",
+     "RB",
+     "ATL"
+    ],
+    [
+     5,
+     1,
+     "HendrixHitSquad",
+     "Hendrix",
+     "",
+     "Jonathan Taylor",
+     "RB",
+     "IND"
+    ],
+    [
+     6,
+     1,
+     "CaitlinF",
+     "Caitlin",
+     "",
+     "Puka Nacua",
+     "WR",
+     "LAR"
+    ],
+    [
+     7,
+     1,
+     "Cfelderhoff81",
+     "",
+     "Hubert's Hunters",
+     "James Cook",
+     "RB",
+     "BUF"
+    ],
+    [
+     8,
+     1,
+     "jamesm80",
+     "James",
+     "",
+     "Ja'Marr Chase",
+     "WR",
+     "CIN"
+    ],
+    [
+     9,
+     1,
+     "coopcoopmommy",
+     "",
+     "Coopers Mommy",
+     "De'Von Achane",
+     "RB",
+     "MIA"
+    ],
+    [
+     10,
+     1,
+     "Refsglasepatria",
+     "",
+     "",
+     "Derrick Henry",
+     "RB",
+     "BAL"
+    ],
+    [
+     11,
+     1,
+     "Stinger005",
+     "Dustin",
+     "Colter dancing in endzone",
+     "Jaxon Smith-Njigba",
+     "WR",
+     "SEA"
+    ],
+    [
+     12,
+     1,
+     "CasonJaceHazouri",
+     "Cason Jace",
+     "",
+     "Christian McCaffrey",
+     "RB",
+     "SF"
+    ],
+    [
+     13,
+     2,
+     "CasonJaceHazouri",
+     "Cason Jace",
+     "",
+     "Amon-Ra St. Brown",
+     "WR",
+     "DET"
+    ],
+    [
+     14,
+     2,
+     "Stinger005",
+     "Dustin",
+     "Colter dancing in endzone",
+     "Saquon Barkley",
+     "RB",
+     "PHI"
+    ],
+    [
+     15,
+     2,
+     "Refsglasepatria",
+     "",
+     "",
+     "CeeDee Lamb",
+     "WR",
+     "DAL"
+    ],
+    [
+     16,
+     2,
+     "coopcoopmommy",
+     "",
+     "Coopers Mommy",
+     "Ashton Jeanty",
+     "RB",
+     "LV"
+    ],
+    [
+     17,
+     2,
+     "jamesm80",
+     "James",
+     "",
+     "Justin Jefferson",
+     "WR",
+     "MIN"
+    ],
+    [
+     18,
+     2,
+     "Cfelderhoff81",
+     "",
+     "Hubert's Hunters",
+     "Chase Brown",
+     "RB",
+     "CIN"
+    ],
+    [
+     19,
+     2,
+     "CaitlinF",
+     "Caitlin",
+     "",
+     "Omarion Hampton",
+     "RB",
+     "LAC"
+    ],
+    [
+     20,
+     2,
+     "HendrixHitSquad",
+     "Hendrix",
+     "",
+     "A.J. Brown",
+     "WR",
+     "NE"
+    ],
+    [
+     21,
+     2,
+     "mwf8507",
+     "",
+     "Hoff Daddy",
+     "Kenneth Walker",
+     "RB",
+     "KC"
+    ],
+    [
+     22,
+     2,
+     "iplayfutbolfr",
+     "",
+     "",
+     "George Pickens",
+     "WR",
+     "DAL"
+    ],
+    [
+     23,
+     2,
+     "MadFutbol",
+     "",
+     "",
+     "Cam Skattebo",
+     "RB",
+     "NYG"
+    ],
+    [
+     24,
+     2,
+     "TheBrodinators",
+     "Brody",
+     "",
+     "Jeremiyah Love",
+     "RB",
+     "ARI"
+    ],
+    [
+     25,
+     3,
+     "TheBrodinators",
+     "Brody",
+     "",
+     "Drake London",
+     "WR",
+     "ATL"
+    ],
+    [
+     26,
+     3,
+     "MadFutbol",
+     "",
+     "",
+     "Harrison Butker",
+     "K",
+     "KC"
+    ],
+    [
+     27,
+     3,
+     "iplayfutbolfr",
+     "",
+     "",
+     "Drake Maye",
+     "QB",
+     "NE"
+    ],
+    [
+     28,
+     3,
+     "mwf8507",
+     "",
+     "Hoff Daddy",
+     "Trey McBride",
+     "TE",
+     "ARI"
+    ],
+    [
+     29,
+     3,
+     "HendrixHitSquad",
+     "Hendrix",
+     "",
+     "Brock Bowers",
+     "TE",
+     "LV"
+    ],
+    [
+     30,
+     3,
+     "CaitlinF",
+     "Caitlin",
+     "",
+     "Lamar Jackson",
+     "QB",
+     "BAL"
+    ],
+    [
+     31,
+     3,
+     "Cfelderhoff81",
+     "",
+     "Hubert's Hunters",
+     "Nico Collins",
+     "WR",
+     "HOU"
+    ],
+    [
+     32,
+     3,
+     "jamesm80",
+     "James",
+     "",
+     "Kyren Williams",
+     "RB",
+     "LAR"
+    ],
+    [
+     33,
+     3,
+     "coopcoopmommy",
+     "",
+     "Coopers Mommy",
+     "Rashee Rice",
+     "WR",
+     "KC"
+    ],
+    [
+     34,
+     3,
+     "Refsglasepatria",
+     "",
+     "",
+     "Javonte Williams",
+     "RB",
+     "DAL"
+    ],
+    [
+     35,
+     3,
+     "Stinger005",
+     "Dustin",
+     "Colter dancing in endzone",
+     "Chris Olave",
+     "WR",
+     "NO"
+    ],
+    [
+     36,
+     3,
+     "CasonJaceHazouri",
+     "Cason Jace",
+     "",
+     "Malik Nabers",
+     "WR",
+     "NYG"
+    ],
+    [
+     37,
+     4,
+     "CasonJaceHazouri",
+     "Cason Jace",
+     "",
+     "Josh Jacobs",
+     "RB",
+     "GB"
+    ],
+    [
+     38,
+     4,
+     "Stinger005",
+     "Dustin",
+     "Colter dancing in endzone",
+     "Joe Burrow",
+     "QB",
+     "CIN"
+    ],
+    [
+     39,
+     4,
+     "Refsglasepatria",
+     "",
+     "",
+     "Breece Hall",
+     "RB",
+     "NYJ"
+    ],
+    [
+     40,
+     4,
+     "coopcoopmommy",
+     "",
+     "Coopers Mommy",
+     "Tee Higgins",
+     "WR",
+     "CIN"
+    ],
+    [
+     41,
+     4,
+     "jamesm80",
+     "James",
+     "",
+     "Tetairoa McMillan",
+     "WR",
+     "CAR"
+    ],
+    [
+     42,
+     4,
+     "Cfelderhoff81",
+     "",
+     "Hubert's Hunters",
+     "Colston Loveland",
+     "TE",
+     "CHI"
+    ],
+    [
+     43,
+     4,
+     "CaitlinF",
+     "Caitlin",
+     "",
+     "Jaylen Waddle",
+     "WR",
+     "DEN"
+    ],
+    [
+     44,
+     4,
+     "HendrixHitSquad",
+     "Hendrix",
+     "",
+     "Travis Etienne",
+     "RB",
+     "NO"
+    ],
+    [
+     45,
+     4,
+     "mwf8507",
+     "",
+     "Hoff Daddy",
+     "DJ Moore",
+     "WR",
+     "BUF"
+    ],
+    [
+     46,
+     4,
+     "iplayfutbolfr",
+     "",
+     "",
+     "David Montgomery",
+     "RB",
+     "HOU"
+    ],
+    [
+     47,
+     4,
+     "MadFutbol",
+     "",
+     "",
+     "Matthew Stafford",
+     "QB",
+     "LAR"
+    ],
+    [
+     48,
+     4,
+     "TheBrodinators",
+     "Brody",
+     "",
+     "Dak Prescott",
+     "QB",
+     "DAL"
+    ],
+    [
+     49,
+     5,
+     "TheBrodinators",
+     "Brody",
+     "",
+     "Jake Ferguson",
+     "TE",
+     "DAL"
+    ],
+    [
+     50,
+     5,
+     "MadFutbol",
+     "",
+     "",
+     "DeVonta Smith",
+     "WR",
+     "PHI"
+    ],
+    [
+     51,
+     5,
+     "iplayfutbolfr",
+     "",
+     "",
+     "Sam LaPorta",
+     "TE",
+     "DET"
+    ],
+    [
+     52,
+     5,
+     "mwf8507",
+     "",
+     "Hoff Daddy",
+     "Quinshon Judkins",
+     "RB",
+     "CLE"
+    ],
+    [
+     53,
+     5,
+     "HendrixHitSquad",
+     "Hendrix",
+     "",
+     "Caleb Williams",
+     "QB",
+     "CHI"
+    ],
+    [
+     54,
+     5,
+     "CaitlinF",
+     "Caitlin",
+     "",
+     "Alvin Kamara",
+     "RB",
+     "NO"
+    ],
+    [
+     55,
+     5,
+     "Cfelderhoff81",
+     "",
+     "Hubert's Hunters",
+     "Bucky Irving",
+     "RB",
+     "TB"
+    ],
+    [
+     56,
+     5,
+     "jamesm80",
+     "James",
+     "",
+     "D'Andre Swift",
+     "RB",
+     "CHI"
+    ],
+    [
+     57,
+     5,
+     "coopcoopmommy",
+     "",
+     "Coopers Mommy",
+     "Tyler Warren",
+     "TE",
+     "IND"
+    ],
+    [
+     58,
+     5,
+     "Refsglasepatria",
+     "",
+     "",
+     "Emeka Egbuka",
+     "WR",
+     "TB"
+    ],
+    [
+     59,
+     5,
+     "Stinger005",
+     "Dustin",
+     "Colter dancing in endzone",
+     "Ladd McConkey",
+     "WR",
+     "LAC"
+    ],
+    [
+     60,
+     5,
+     "CasonJaceHazouri",
+     "Cason Jace",
+     "",
+     "Davante Adams",
+     "WR",
+     "LAR"
+    ],
+    [
+     61,
+     6,
+     "CasonJaceHazouri",
+     "Cason Jace",
+     "",
+     "DK Metcalf",
+     "WR",
+     "PIT"
+    ],
+    [
+     62,
+     6,
+     "Stinger005",
+     "Dustin",
+     "Colter dancing in endzone",
+     "Zay Flowers",
+     "WR",
+     "BAL"
+    ],
+    [
+     63,
+     6,
+     "Refsglasepatria",
+     "",
+     "",
+     "Garrett Wilson",
+     "WR",
+     "NYJ"
+    ],
+    [
+     64,
+     6,
+     "coopcoopmommy",
+     "",
+     "Coopers Mommy",
+     "Jalen Hurts",
+     "QB",
+     "PHI"
+    ],
+    [
+     65,
+     6,
+     "jamesm80",
+     "James",
+     "",
+     "Justin Herbert",
+     "QB",
+     "LAC"
+    ],
+    [
+     66,
+     6,
+     "Cfelderhoff81",
+     "",
+     "Hubert's Hunters",
+     "Christian Watson",
+     "WR",
+     "GB"
+    ],
+    [
+     67,
+     6,
+     "CaitlinF",
+     "Caitlin",
+     "",
+     "Rome Odunze",
+     "WR",
+     "CHI"
+    ],
+    [
+     68,
+     6,
+     "HendrixHitSquad",
+     "Hendrix",
+     "",
+     "Terry McLaurin",
+     "WR",
+     "WAS"
+    ],
+    [
+     69,
+     6,
+     "mwf8507",
+     "",
+     "Hoff Daddy",
+     "RJ Harvey",
+     "RB",
+     "DEN"
+    ],
+    [
+     70,
+     6,
+     "iplayfutbolfr",
+     "",
+     "",
+     "Cameron Dicker",
+     "K",
+     "LAC"
+    ],
+    [
+     71,
+     6,
+     "MadFutbol",
+     "",
+     "",
+     "Green Bay Packers",
+     "DEF",
+     "GB"
+    ],
+    [
+     72,
+     6,
+     "TheBrodinators",
+     "Brody",
+     "",
+     "Los Angeles Rams",
+     "DEF",
+     "LAR"
+    ],
+    [
+     73,
+     7,
+     "TheBrodinators",
+     "Brody",
+     "",
+     "Luther Burden",
+     "WR",
+     "CHI"
+    ],
+    [
+     74,
+     7,
+     "MadFutbol",
+     "",
+     "",
+     "Travis Kelce",
+     "TE",
+     "KC"
+    ],
+    [
+     75,
+     7,
+     "iplayfutbolfr",
+     "",
+     "",
+     "Houston Texans",
+     "DEF",
+     "HOU"
+    ],
+    [
+     76,
+     7,
+     "mwf8507",
+     "",
+     "Hoff Daddy",
+     "Jonathon Brooks",
+     "RB",
+     "CAR"
+    ],
+    [
+     77,
+     7,
+     "HendrixHitSquad",
+     "Hendrix",
+     "",
+     "TreVeyon Henderson",
+     "RB",
+     "NE"
+    ],
+    [
+     78,
+     7,
+     "CaitlinF",
+     "Caitlin",
+     "",
+     "Tucker Kraft",
+     "TE",
+     "GB"
+    ],
+    [
+     79,
+     7,
+     "Cfelderhoff81",
+     "",
+     "Hubert's Hunters",
+     "Parker Washington",
+     "WR",
+     "JAX"
+    ],
+    [
+     80,
+     7,
+     "jamesm80",
+     "James",
+     "",
+     "Jadarian Price",
+     "RB",
+     "SEA"
+    ],
+    [
+     81,
+     7,
+     "coopcoopmommy",
+     "",
+     "Coopers Mommy",
+     "Mike Evans",
+     "WR",
+     "SF"
+    ],
+    [
+     82,
+     7,
+     "Refsglasepatria",
+     "",
+     "",
+     "Jameson Williams",
+     "WR",
+     "DET"
+    ],
+    [
+     83,
+     7,
+     "Stinger005",
+     "Dustin",
+     "Colter dancing in endzone",
+     "Harold Fannin",
+     "TE",
+     "CLE"
+    ],
+    [
+     84,
+     7,
+     "CasonJaceHazouri",
+     "Cason Jace",
+     "",
+     "Dalton Kincaid",
+     "TE",
+     "BUF"
+    ],
+    [
+     85,
+     8,
+     "CasonJaceHazouri",
+     "Cason Jace",
+     "",
+     "Kyle Pitts",
+     "TE",
+     "ATL"
+    ],
+    [
+     86,
+     8,
+     "Stinger005",
+     "Dustin",
+     "Colter dancing in endzone",
+     "Jayden Daniels",
+     "QB",
+     "WAS"
+    ],
+    [
+     87,
+     8,
+     "Refsglasepatria",
+     "",
+     "",
+     "Isaiah Likely",
+     "TE",
+     "NYG"
+    ],
+    [
+     88,
+     8,
+     "coopcoopmommy",
+     "",
+     "Coopers Mommy",
+     "Bhayshul Tuten",
+     "RB",
+     "JAX"
+    ],
+    [
+     89,
+     8,
+     "jamesm80",
+     "James",
+     "",
+     "Carnell Tate",
+     "WR",
+     "TEN"
+    ],
+    [
+     90,
+     8,
+     "Cfelderhoff81",
+     "",
+     "Hubert's Hunters",
+     "Jaylen Warren",
+     "RB",
+     "PIT"
+    ],
+    [
+     91,
+     8,
+     "CaitlinF",
+     "Caitlin",
+     "",
+     "Tyjae Spears",
+     "RB",
+     "TEN"
+    ],
+    [
+     92,
+     8,
+     "HendrixHitSquad",
+     "Hendrix",
+     "",
+     "Brian Thomas",
+     "WR",
+     "JAX"
+    ],
+    [
+     93,
+     8,
+     "mwf8507",
+     "",
+     "Hoff Daddy",
+     "Kenyon Sadiq",
+     "TE",
+     "NYJ"
+    ],
+    [
+     94,
+     8,
+     "iplayfutbolfr",
+     "",
+     "",
+     "Marvin Harrison",
+     "WR",
+     "ARI"
+    ],
+    [
+     95,
+     8,
+     "MadFutbol",
+     "",
+     "",
+     "J.K. Dobbins",
+     "RB",
+     "DEN"
+    ],
+    [
+     96,
+     8,
+     "TheBrodinators",
+     "Brody",
+     "",
+     "Courtland Sutton",
+     "WR",
+     "DEN"
+    ],
+    [
+     97,
+     9,
+     "TheBrodinators",
+     "Brody",
+     "",
+     "Rico Dowdle",
+     "RB",
+     "PIT"
+    ],
+    [
+     98,
+     9,
+     "MadFutbol",
+     "",
+     "",
+     "Michael Wilson",
+     "WR",
+     "ARI"
+    ],
+    [
+     99,
+     9,
+     "iplayfutbolfr",
+     "",
+     "",
+     "George Kittle",
+     "TE",
+     "SF"
+    ],
+    [
+     100,
+     9,
+     "mwf8507",
+     "",
+     "Hoff Daddy",
+     "Patrick Mahomes",
+     "QB",
+     "KC"
+    ],
+    [
+     101,
+     9,
+     "HendrixHitSquad",
+     "Hendrix",
+     "",
+     "Oronde Gadsden",
+     "TE",
+     "LAC"
+    ],
+    [
+     102,
+     9,
+     "CaitlinF",
+     "Caitlin",
+     "",
+     "C.J. Stroud",
+     "QB",
+     "HOU"
+    ],
+    [
+     103,
+     9,
+     "Cfelderhoff81",
+     "",
+     "Hubert's Hunters",
+     "Dalton Schultz",
+     "TE",
+     "HOU"
+    ],
+    [
+     104,
+     9,
+     "jamesm80",
+     "James",
+     "",
+     "Tony Pollard",
+     "RB",
+     "TEN"
+    ],
+    [
+     105,
+     9,
+     "coopcoopmommy",
+     "",
+     "Coopers Mommy",
+     "Denver Broncos",
+     "DEF",
+     "DEN"
+    ],
+    [
+     106,
+     9,
+     "Refsglasepatria",
+     "",
+     "",
+     "Sam Darnold",
+     "QB",
+     "SEA"
+    ],
+    [
+     107,
+     9,
+     "Stinger005",
+     "Dustin",
+     "Colter dancing in endzone",
+     "Rhamondre Stevenson",
+     "RB",
+     "NE"
+    ],
+    [
+     108,
+     9,
+     "CasonJaceHazouri",
+     "Cason Jace",
+     "",
+     "Isiah Pacheco",
+     "RB",
+     "DET"
+    ],
+    [
+     109,
+     10,
+     "CasonJaceHazouri",
+     "Cason Jace",
+     "",
+     "Brian Robinson",
+     "RB",
+     "ATL"
+    ],
+    [
+     110,
+     10,
+     "Stinger005",
+     "Dustin",
+     "Colter dancing in endzone",
+     "Seattle Seahawks",
+     "DEF",
+     "SEA"
+    ],
+    [
+     111,
+     10,
+     "Refsglasepatria",
+     "",
+     "",
+     "Philadelphia Eagles",
+     "DEF",
+     "PHI"
+    ],
+    [
+     112,
+     10,
+     "coopcoopmommy",
+     "",
+     "Coopers Mommy",
+     "Blake Corum",
+     "RB",
+     "LAR"
+    ],
+    [
+     113,
+     10,
+     "jamesm80",
+     "James",
+     "",
+     "Dallas Goedert",
+     "TE",
+     "PHI"
+    ],
+    [
+     114,
+     10,
+     "Cfelderhoff81",
+     "",
+     "Hubert's Hunters",
+     "Baltimore Ravens",
+     "DEF",
+     "BAL"
+    ],
+    [
+     115,
+     10,
+     "CaitlinF",
+     "Caitlin",
+     "",
+     "Josh Downs",
+     "WR",
+     "IND"
+    ],
+    [
+     116,
+     10,
+     "HendrixHitSquad",
+     "Hendrix",
+     "",
+     "Minnesota Vikings",
+     "DEF",
+     "MIN"
+    ],
+    [
+     117,
+     10,
+     "mwf8507",
+     "",
+     "Hoff Daddy",
+     "KC Concepcion",
+     "WR",
+     "CLE"
+    ],
+    [
+     118,
+     10,
+     "iplayfutbolfr",
+     "",
+     "",
+     "Jordyn Tyson",
+     "WR",
+     "NO"
+    ],
+    [
+     119,
+     10,
+     "MadFutbol",
+     "",
+     "",
+     "Hunter Henry",
+     "TE",
+     "NE"
+    ],
+    [
+     120,
+     10,
+     "TheBrodinators",
+     "Brody",
+     "",
+     "Makai Lemon",
+     "WR",
+     "PHI"
+    ],
+    [
+     121,
+     11,
+     "TheBrodinators",
+     "Brody",
+     "",
+     "Chris Godwin",
+     "WR",
+     "TB"
+    ],
+    [
+     122,
+     11,
+     "MadFutbol",
+     "",
+     "",
+     "Chuba Hubbard",
+     "RB",
+     "CAR"
+    ],
+    [
+     123,
+     11,
+     "iplayfutbolfr",
+     "",
+     "",
+     "Jaxson Dart",
+     "QB",
+     "NYG"
+    ],
+    [
+     124,
+     11,
+     "mwf8507",
+     "",
+     "Hoff Daddy",
+     "Alec Pierce",
+     "WR",
+     "IND"
+    ],
+    [
+     125,
+     11,
+     "HendrixHitSquad",
+     "Hendrix",
+     "",
+     "Ka'imi Fairbairn",
+     "K",
+     "HOU"
+    ],
+    [
+     126,
+     11,
+     "CaitlinF",
+     "Caitlin",
+     "",
+     "Keaton Mitchell",
+     "RB",
+     "LAC"
+    ],
+    [
+     127,
+     11,
+     "Cfelderhoff81",
+     "",
+     "Hubert's Hunters",
+     "Aaron Jones",
+     "RB",
+     "MIN"
+    ],
+    [
+     128,
+     11,
+     "jamesm80",
+     "James",
+     "",
+     "Kyle Monangai",
+     "RB",
+     "CHI"
+    ],
+    [
+     129,
+     11,
+     "coopcoopmommy",
+     "",
+     "Coopers Mommy",
+     "Jordan Addison",
+     "WR",
+     "MIN"
+    ],
+    [
+     130,
+     11,
+     "Refsglasepatria",
+     "",
+     "",
+     "Jacory Croskey-Merritt",
+     "RB",
+     "WAS"
+    ],
+    [
+     131,
+     11,
+     "Stinger005",
+     "Dustin",
+     "Colter dancing in endzone",
+     "Trevor Lawrence",
+     "QB",
+     "JAX"
+    ],
+    [
+     132,
+     11,
+     "CasonJaceHazouri",
+     "Cason Jace",
+     "",
+     "Jared Goff",
+     "QB",
+     "DET"
+    ],
+    [
+     133,
+     12,
+     "CasonJaceHazouri",
+     "Cason Jace",
+     "",
+     "Pittsburgh Steelers",
+     "DEF",
+     "PIT"
+    ],
+    [
+     134,
+     12,
+     "Stinger005",
+     "Dustin",
+     "Colter dancing in endzone",
+     "Wan'Dale Robinson",
+     "WR",
+     "TEN"
+    ],
+    [
+     135,
+     12,
+     "Refsglasepatria",
+     "",
+     "",
+     "Brock Purdy",
+     "QB",
+     "SF"
+    ],
+    [
+     136,
+     12,
+     "coopcoopmommy",
+     "",
+     "Coopers Mommy",
+     "Bo Nix",
+     "QB",
+     "DEN"
+    ],
+    [
+     137,
+     12,
+     "jamesm80",
+     "James",
+     "",
+     "Stefon Diggs",
+     "WR",
+     "WAS"
+    ],
+    [
+     138,
+     12,
+     "Cfelderhoff81",
+     "",
+     "Hubert's Hunters",
+     "Jakobi Meyers",
+     "WR",
+     "JAX"
+    ],
+    [
+     139,
+     12,
+     "CaitlinF",
+     "Caitlin",
+     "",
+     "Jalen Nailor",
+     "WR",
+     "LV"
+    ],
+    [
+     140,
+     12,
+     "HendrixHitSquad",
+     "Hendrix",
+     "",
+     "Jayden Reed",
+     "WR",
+     "GB"
+    ],
+    [
+     141,
+     12,
+     "mwf8507",
+     "",
+     "Hoff Daddy",
+     "Omar Cooper",
+     "WR",
+     "NYJ"
+    ],
+    [
+     142,
+     12,
+     "iplayfutbolfr",
+     "",
+     "",
+     "Fernando Mendoza",
+     "QB",
+     "LV"
+    ],
+    [
+     143,
+     12,
+     "MadFutbol",
+     "",
+     "",
+     "Matthew Golden",
+     "WR",
+     "GB"
+    ],
+    [
+     144,
+     12,
+     "TheBrodinators",
+     "Brody",
+     "",
+     "Jordan Love",
+     "QB",
+     "GB"
+    ],
+    [
+     145,
+     13,
+     "TheBrodinators",
+     "Brody",
+     "",
+     "Mark Andrews",
+     "TE",
+     "BAL"
+    ],
+    [
+     146,
+     13,
+     "MadFutbol",
+     "",
+     "",
+     "AJ Barner",
+     "TE",
+     "SEA"
+    ],
+    [
+     147,
+     13,
+     "iplayfutbolfr",
+     "",
+     "",
+     "Xavier Worthy",
+     "WR",
+     "KC"
+    ],
+    [
+     148,
+     13,
+     "mwf8507",
+     "",
+     "Hoff Daddy",
+     "Kyler Murray",
+     "QB",
+     "MIN"
+    ],
+    [
+     149,
+     13,
+     "HendrixHitSquad",
+     "Hendrix",
+     "",
+     "Kenny Gainwell",
+     "RB",
+     "TB"
+    ],
+    [
+     150,
+     13,
+     "CaitlinF",
+     "Caitlin",
+     "",
+     "Greg Dulcich",
+     "TE",
+     "MIA"
+    ],
+    [
+     151,
+     13,
+     "Cfelderhoff81",
+     "",
+     "Hubert's Hunters",
+     "Baker Mayfield",
+     "QB",
+     "TB"
+    ],
+    [
+     152,
+     13,
+     "jamesm80",
+     "James",
+     "",
+     "Jordan Mason",
+     "RB",
+     "MIN"
+    ],
+    [
+     153,
+     13,
+     "coopcoopmommy",
+     "",
+     "Coopers Mommy",
+     "Jason Myers",
+     "K",
+     "SEA"
+    ],
+    [
+     154,
+     13,
+     "Refsglasepatria",
+     "",
+     "",
+     "Rachaad White",
+     "RB",
+     "WAS"
+    ],
+    [
+     155,
+     13,
+     "Stinger005",
+     "Dustin",
+     "Colter dancing in endzone",
+     "Romeo Doubs",
+     "WR",
+     "NE"
+    ],
+    [
+     156,
+     13,
+     "CasonJaceHazouri",
+     "Cason Jace",
+     "",
+     "Cam Little",
+     "K",
+     "JAX"
+    ],
+    [
+     157,
+     14,
+     "CasonJaceHazouri",
+     "Cason Jace",
+     "",
+     "Khalil Shakir",
+     "WR",
+     "BUF"
+    ],
+    [
+     158,
+     14,
+     "Stinger005",
+     "Dustin",
+     "Colter dancing in endzone",
+     "Chris Rodriguez",
+     "RB",
+     "JAX"
+    ],
+    [
+     159,
+     14,
+     "Refsglasepatria",
+     "",
+     "",
+     "T.J. Hockenson",
+     "TE",
+     "MIN"
+    ],
+    [
+     160,
+     14,
+     "coopcoopmommy",
+     "",
+     "Coopers Mommy",
+     "Deebo Samuel",
+     "WR",
+     "SF"
+    ],
+    [
+     161,
+     14,
+     "jamesm80",
+     "James",
+     "",
+     "New England Patriots",
+     "DEF",
+     "NE"
+    ],
+    [
+     162,
+     14,
+     "Cfelderhoff81",
+     "",
+     "Hubert's Hunters",
+     "Malik Willis",
+     "QB",
+     "MIA"
+    ],
+    [
+     163,
+     14,
+     "CaitlinF",
+     "Caitlin",
+     "",
+     "San Francisco 49ers",
+     "DEF",
+     "SF"
+    ],
+    [
+     164,
+     14,
+     "HendrixHitSquad",
+     "Hendrix",
+     "",
+     "Tyler Shough",
+     "QB",
+     "NO"
+    ],
+    [
+     165,
+     14,
+     "mwf8507",
+     "",
+     "Hoff Daddy",
+     "Dallas Cowboys",
+     "DEF",
+     "DAL"
+    ],
+    [
+     166,
+     14,
+     "iplayfutbolfr",
+     "",
+     "",
+     "Daniel Jones",
+     "QB",
+     "IND"
+    ],
+    [
+     167,
+     14,
+     "MadFutbol",
+     "",
+     "",
+     "Jonah Coleman",
+     "RB",
+     "DEN"
+    ],
+    [
+     168,
+     14,
+     "TheBrodinators",
+     "Brody",
+     "",
+     "Tyler Allgeier",
+     "RB",
+     "ARI"
+    ],
+    [
+     169,
+     15,
+     "TheBrodinators",
+     "Brody",
+     "",
+     "Detroit Lions",
+     "DEF",
+     "DET"
+    ],
+    [
+     170,
+     15,
+     "MadFutbol",
+     "",
+     "",
+     "Michael Pittman",
+     "WR",
+     "PIT"
+    ],
+    [
+     171,
+     15,
+     "iplayfutbolfr",
+     "",
+     "",
+     "Jalen Coker",
+     "WR",
+     "CAR"
+    ],
+    [
+     172,
+     15,
+     "mwf8507",
+     "",
+     "Hoff Daddy",
+     "Will Reichard",
+     "K",
+     "MIN"
+    ],
+    [
+     173,
+     15,
+     "HendrixHitSquad",
+     "Hendrix",
+     "",
+     "Harrison Mevis",
+     "K",
+     "LAR"
+    ],
+    [
+     174,
+     15,
+     "CaitlinF",
+     "Caitlin",
+     "",
+     "Jake Elliott",
+     "K",
+     "PHI"
+    ],
+    [
+     175,
+     15,
+     "Cfelderhoff81",
+     "",
+     "Hubert's Hunters",
+     "Andy Borregales",
+     "K",
+     "NE"
+    ],
+    [
+     176,
+     15,
+     "jamesm80",
+     "James",
+     "",
+     "Jake Bates",
+     "K",
+     "DET"
+    ],
+    [
+     177,
+     15,
+     "coopcoopmommy",
+     "",
+     "Coopers Mommy",
+     "MarShawn Lloyd",
+     "RB",
+     "GB"
+    ],
+    [
+     178,
+     15,
+     "Refsglasepatria",
+     "",
+     "",
+     "Chris Boswell",
+     "K",
+     "PIT"
+    ],
+    [
+     179,
+     15,
+     "Stinger005",
+     "Dustin",
+     "Colter dancing in endzone",
+     "Eddy Pineiro",
+     "K",
+     "SF"
+    ],
+    [
+     180,
+     15,
+     "CasonJaceHazouri",
+     "Cason Jace",
+     "",
+     "Cam Ward",
+     "QB",
+     "TEN"
+    ]
+   ],
+   "column_widths": {
+    "A": 8,
+    "B": 7,
+    "C": 20,
+    "D": 12,
+    "E": 24,
+    "F": 26,
+    "G": 6,
+    "H": 10
+   },
+   "freeze_panes": "A2",
+   "autofilter": "A1:H181",
+   "tables": [
+    {
+     "name": "DraftPicks",
+     "style": "TableStyleMedium2",
+     "range": "A1:H181"
+    }
+   ]
+  },
+  {
+   "name": "Team Summary",
+   "rows": [
+    [
+     {
+      "value": "Team (Sleeper)",
+      "bold": true,
+      "font_color": "FFFFFF",
+      "fill": "06D6A0",
+      "align": "center"
+     },
+     {
+      "value": "First Name",
+      "bold": true,
+      "font_color": "FFFFFF",
+      "fill": "06D6A0",
+      "align": "center"
+     },
+     {
+      "value": "Team Name",
+      "bold": true,
+      "font_color": "FFFFFF",
+      "fill": "06D6A0",
+      "align": "center"
+     },
+     {
+      "value": "Picks",
+      "bold": true,
+      "font_color": "FFFFFF",
+      "fill": "06D6A0",
+      "align": "center"
+     },
+     {
+      "value": "First Pick",
+      "bold": true,
+      "font_color": "FFFFFF",
+      "fill": "06D6A0",
+      "align": "center"
+     },
+     {
+      "value": "Last Pick",
+      "bold": true,
+      "font_color": "FFFFFF",
+      "fill": "06D6A0",
+      "align": "center"
+     }
+    ],
+    [
+     "CaitlinF",
+     "Caitlin",
+     "",
+     15,
+     "#6 Puka Nacua",
+     "#174 Jake Elliott"
+    ],
+    [
+     "CasonJaceHazouri",
+     "Cason Jace",
+     "",
+     15,
+     "#12 Christian McCaffrey",
+     "#180 Cam Ward"
+    ],
+    [
+     "Cfelderhoff81",
+     "",
+     "Hubert's Hunters",
+     15,
+     "#7 James Cook",
+     "#175 Andy Borregales"
+    ],
+    [
+     "HendrixHitSquad",
+     "Hendrix",
+     "",
+     15,
+     "#5 Jonathan Taylor",
+     "#173 Harrison Mevis"
+    ],
+    [
+     "MadFutbol",
+     "",
+     "",
+     15,
+     "#2 Josh Allen",
+     "#170 Michael Pittman"
+    ],
+    [
+     "Refsglasepatria",
+     "",
+     "",
+     15,
+     "#10 Derrick Henry",
+     "#178 Chris Boswell"
+    ],
+    [
+     "Stinger005",
+     "Dustin",
+     "Colter dancing in endzone",
+     15,
+     "#11 Jaxon Smith-Njigba",
+     "#179 Eddy Pineiro"
+    ],
+    [
+     "TheBrodinators",
+     "Brody",
+     "",
+     15,
+     "#1 Brandon Aubrey",
+     "#169 Detroit Lions"
+    ],
+    [
+     "coopcoopmommy",
+     "",
+     "Coopers Mommy",
+     15,
+     "#9 De'Von Achane",
+     "#177 MarShawn Lloyd"
+    ],
+    [
+     "iplayfutbolfr",
+     "",
+     "",
+     15,
+     "#3 Jahmyr Gibbs",
+     "#171 Jalen Coker"
+    ],
+    [
+     "jamesm80",
+     "James",
+     "",
+     15,
+     "#8 Ja'Marr Chase",
+     "#176 Jake Bates"
+    ],
+    [
+     "mwf8507",
+     "",
+     "Hoff Daddy",
+     15,
+     "#4 Bijan Robinson",
+     "#172 Will Reichard"
+    ]
+   ],
+   "column_widths": {
+    "A": 20,
+    "B": 12,
+    "C": 24,
+    "D": 8,
+    "E": 24,
+    "F": 24
+   },
+   "freeze_panes": "A2"
+  }
+ ]
+}
