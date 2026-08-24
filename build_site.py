@@ -341,7 +341,7 @@ def render_power_rankings(sec):
 # Page sections
 # --------------------------------------------------------------------------
 
-def render_header(meta, date, emoji="🏈⭐🌟", active_tab="report"):
+def render_header(meta, date, emoji="🏈⭐🌟", active_tab="report", base=""):
     title = esc(meta.get("report_title") or "Hofftown Ballers Weekly Report")
     week = meta.get("week")
     season = meta.get("season")
@@ -364,8 +364,8 @@ def render_header(meta, date, emoji="🏈⭐🌟", active_tab="report"):
     draft_active = " active" if active_tab == "draft" else ""
     tabs = (
         '<nav class="tabs">'
-        f'<a class="tab{report_active}" href="index.html">📋 Report</a>'
-        f'<a class="tab{draft_active}" href="draft.html">🏈 Draft Board</a>'
+        f'<a class="tab{report_active}" href="{base}index.html">📋 Report</a>'
+        f'<a class="tab{draft_active}" href="{base}draft.html">🏈 Draft Board</a>'
         "</nav>"
     )
     return (
@@ -630,7 +630,7 @@ def upsert_archive(reports, meta):
 
 def render_archive(reports, date):
     parts = [PAGE_HEAD.format(title="Past Reports — Hofftown Ballers", css=CSS_ARCHIVE)]
-    parts.append(render_header({"report_title": "Past Reports 🗂️", "season": "", "week": "", "generated_at": ""}, "", emoji="🗂️🏈"))
+    parts.append(render_header({"report_title": "Past Reports 🗂️", "season": "", "week": "", "generated_at": ""}, "", emoji="🗂️🏈", base="../"))
     parts.append("<main>")
     parts.append('<a class="backlink" href="../index.html">← Back to this week\'s report</a>')
     if not reports:
