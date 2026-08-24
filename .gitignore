@@ -1,0 +1,5 @@
+# Generated report artifacts — never commit these
+report.json
+report.reviewed.json
+site/
+__pycache__/

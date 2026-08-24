@@ -1,0 +1,2 @@
+# Stdlib only — this project uses no third-party Python packages.
+# GitHub Actions runners need no install step.

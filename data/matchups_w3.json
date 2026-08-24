@@ -20,7 +20,7 @@
     ],
     "roster_id": 1,
     "custom_points": null,
-    "matchup_id": 5,
+    "matchup_id": 4,
     "starters": [
       "3294",
       "9509",
@@ -84,7 +84,7 @@
     ],
     "roster_id": 2,
     "custom_points": null,
-    "matchup_id": 5,
+    "matchup_id": 6,
     "starters": [
       "8183",
       "3198",
@@ -148,7 +148,7 @@
     ],
     "roster_id": 3,
     "custom_points": null,
-    "matchup_id": 2,
+    "matchup_id": 1,
     "starters": [
       "6797",
       "8150",
@@ -212,7 +212,7 @@
     ],
     "roster_id": 4,
     "custom_points": null,
-    "matchup_id": 4,
+    "matchup_id": 5,
     "starters": [
       "4881",
       "12507",
@@ -340,7 +340,7 @@
     ],
     "roster_id": 6,
     "custom_points": null,
-    "matchup_id": 2,
+    "matchup_id": 3,
     "starters": [
       "4892",
       "8138",
@@ -404,7 +404,7 @@
     ],
     "roster_id": 7,
     "custom_points": null,
-    "matchup_id": 3,
+    "matchup_id": 2,
     "starters": [
       "6904",
       "9226",
@@ -468,7 +468,7 @@
     ],
     "roster_id": 8,
     "custom_points": null,
-    "matchup_id": 6,
+    "matchup_id": 5,
     "starters": [
       "6770",
       "4866",
@@ -532,7 +532,7 @@
     ],
     "roster_id": 9,
     "custom_points": null,
-    "matchup_id": 4,
+    "matchup_id": 3,
     "starters": [
       "11560",
       "6813",
@@ -660,7 +660,7 @@
     ],
     "roster_id": 11,
     "custom_points": null,
-    "matchup_id": 3,
+    "matchup_id": 4,
     "starters": [
       "3163",
       "4034",
@@ -724,7 +724,7 @@
     ],
     "roster_id": 12,
     "custom_points": null,
-    "matchup_id": 1,
+    "matchup_id": 2,
     "starters": [
       "0",
       "13287",
